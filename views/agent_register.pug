@@ -5,21 +5,24 @@ block content-head
 
 block content-body 
     h1 Registration Form
-    form(action="/register_agent" method="post")
-      label(for="name") Name:
-      input(type="text" name="name" required)
+    form(action="/agent/register" method="post")
+      label(for="agentname") Name:
+      input(type="text" name="agentname" required)
       br
       label(for="agency") Agency Name:
       input(type="text" name="agency" required)
       br
       label(for="phone") Phone No:
-      input(type="tel" name="phone" required)
+      input(type="tel" name="phone")
       br
-      label(for="email") Email:
-      input(type="email" name="email" required)
+      label(for="agentemail") Email:
+      input(type="email" name="agentemail" required)
       br
-      label(for="password") Password:
-      input(type="password" name="password" required)
+      label(for="agentpassword") Password:
+      input(type="password" name="agentpassword" required)
+      br
+      label(for="agentid") Agent ID:
+      input(type="text" name="agentid" required)
       br
       
       input(type="submit" value="Register")

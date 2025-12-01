@@ -7,7 +7,7 @@ require('dotenv').config();  // Load environment variables
 const router = express.Router();
 
 router.post('/register', async (req, res) => {
-  const { agentname, agentemail, agentpassword, agentid } = req.body;
+  const { agentname, agentemail, agentpassword, agentid, agency, phone } = req.body;
 
   try {
       // Check if the agent already exists in the database (use email to check uniqueness)
@@ -22,6 +22,8 @@ router.post('/register', async (req, res) => {
           email: agentemail,    // Use 'email' field from the model
           password: agentpassword,  // Use 'password' field from the model
           agentId: agentid,     // Use 'agentId' field from the model
+          agency: agency,       // Set agency field
+          phone: phone,         // Set phone field
           role: 'agent'         // Set role as 'agent'
       });
 
